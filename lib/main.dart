@@ -31,7 +31,7 @@ class _MyState extends State<StatefulWidget> {
 
   TextEditingController te1 = new TextEditingController();
   TextEditingController te2 = new TextEditingController();
-  String email = "_____________";
+  String email = "______________";
   String password = "______________";
 
   @override
@@ -56,12 +56,19 @@ class _MyState extends State<StatefulWidget> {
                 children: <Widget>[
                   new TextFormField(
                     controller: te1,
-                    decoration: InputDecoration(hintText: "Enter Email"),
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: InputDecoration(
+                      hintText: "Enter Email",
+                      border: OutlineInputBorder(),
+                    ),
                   ),
                   Padding(padding: EdgeInsets.only(top: 20)),
                   new TextFormField(
                     controller: te2,
-                    decoration: InputDecoration(hintText: "Enter Password"),
+                    keyboardType: TextInputType.visiblePassword,
+                    decoration: InputDecoration(
+                        hintText: "Enter Password",
+                        border: OutlineInputBorder()),
                   ),
                   Padding(padding: EdgeInsets.only(top: 20)),
                   new Row(
@@ -110,6 +117,14 @@ class _MyState extends State<StatefulWidget> {
                 ],
               ),
             ),
+          ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: null,
+          backgroundColor: Colors.pinkAccent,
+          child: new Icon(
+            Icons.exit_to_app,
+            color: Colors.white,
           ),
         ),
       ),
